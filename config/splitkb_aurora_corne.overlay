@@ -1,8 +1,4 @@
-/ {
-    /* Wir definieren den CS-Pin direkt auf dem SPI0-Bus,
-       den das Aurora Shield für das Display verwendet. */
-    &spi0 {
-        status = "okay";
-        cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
-    };
+&spi0 {
+    status = "okay";
+    cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
 };
