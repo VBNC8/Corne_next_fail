@@ -6,6 +6,9 @@
 
 &nice_view_spi {
     status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
     /* Wir definieren den CS Pin sehr explizit */
     cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
 };
