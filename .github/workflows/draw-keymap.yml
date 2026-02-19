@@ -1,1 +1,18 @@
 
+name: Draw ZMK keymaps
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/*.keymap"
+      - "config/*.dtsi"
+      - ".github/workflows/draw-keymap.yml"
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    with:
+      keymap_patterns: "config/*.keymap" # Pfad zu deiner Keymap
+      output_folder: "keymap-drawer"     # Hier wird das Bild gespeichert
+      install_args: "keymap-drawer"
+      config_path: "config/keymap_drawer.config.yaml" # Optional für Styles
