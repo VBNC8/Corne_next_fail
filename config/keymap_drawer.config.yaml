@@ -1,6 +1,23 @@
 parse_config:
   raw_binding_map:
-    # Brackets & Braces (AltGr Kombinationen)
+    # Umlaute (US-Tasten auf DE-System)
+    "&kp SEMI": "ö"
+    "&kp SQT": "ä"
+    "&kp LBKT": "ü"
+    "&kp MINUS": "ß"
+    "&kp BSLH": "#"
+    "&kp EQUAL": "´"
+    
+    # Symbole (Shift-Ebenen im US-Layout, die DE-Zeichen ergeben)
+    "&kp LS(N7)": "/"
+    "&kp LS(N8)": "("
+    "&kp LS(N9)": ")"
+    "&kp LS(N0)": "="
+    "&kp LS(MINUS)": "?"
+    "&kp LS(NON_US_BSLH)": ">"
+    "&kp NON_US_BSLH": "<"
+
+    # AltGr Kombinationen (RA = Right Alt)
     "&kp RA(N7)": "{"
     "&kp RA(N8)": "["
     "&kp RA(N9)": "]"
@@ -8,24 +25,13 @@ parse_config:
     "&kp RA(Q)": "@"
     "&kp RA(E)": "€"
     "&kp RA(MINUS)": "\\"
-    "&kp RA(SQT)": "´"
-    "&kp RA(RBKT)": "~"
-
-    # Umlaute (Wenn du sie in der Keymap via Shift+... oder Alias hast)
-    # Falls du in der Keymap z.B. &kp DE_ADIA schreibst, muss das hier auch so stehen:
-    "&kp DE_A_UMLAUT": "Ä"
-    "&kp DE_O_UMLAUT": "Ö"
-    "&kp DE_U_UMLAUT": "Ü"
-    "&kp DE_SS": "ß"
     
-    # Sonderzeichen aus deinem Bild (Sft+` etc.)
-    "&kp LS(GRAVE)": "°"
-    "&kp LS(NON_US_BSLH)": ">"
-    "&kp RA(NON_US_BSLH)": "|"
-    "&kp NON_US_BSLH)": "<"
-
-    # Deine funktionierenden Mappings zur Sicherheit behalten
+    # Deine speziellen Macros/Behaviors
     "&smiley": "☺"
     "&durchmesser": "Ø"
     "&jigg_on": "Jig ON"
     "&jigg_off": "Jig OFF"
+
+draw_config:
+  dark_mode: true
+  n_columns: 3
