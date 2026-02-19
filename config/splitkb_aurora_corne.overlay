@@ -1,12 +1,8 @@
-/ {
-    /* Wir definieren den CS-Pin direkt dort, wo das Display-Shield ihn erwartet */
-    nice_view_spi: &spi0 {
-        status = "okay";
-        cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
-    };
+&spi0 {
+    status = "okay";
+    cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
 };
 
-/* Wir sagen dem Display-Treiber direkt, dass er diesen Bus nutzen soll */
-&spi0 {
+&nice_view {
     status = "okay";
 };
