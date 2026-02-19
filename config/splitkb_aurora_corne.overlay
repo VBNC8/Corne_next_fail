@@ -4,6 +4,10 @@
     };
 };
 
+/* Deaktiviere den I2C Bus, damit er die Pins 17 & 20 freigibt */
+&i2c1 { status = "disabled"; };
+&i2c0 { status = "disabled"; };
+
 &nice_view_spi {
     status = "okay";
     cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
