@@ -8,6 +8,6 @@
    Der Adapter nennt den Bus intern meistens 'spi0' oder nutzt 'nice_view_spi' 
    aus dem Shield-Kontext. Versuchen wir es so: */
 
-&nice_view_spi {
+&spi0 {
     cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
 };
