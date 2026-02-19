@@ -4,8 +4,6 @@
     };
 };
 
-/* Wir nutzen die Standard-SPI Definition des Shields, 
-   überschreiben aber nur den CS-Pin */
 &nice_view_spi {
     status = "okay";
     cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
