@@ -84,7 +84,7 @@ layers:
   - ü
   - \
   - ö
-  - )
+  - '='
   - ä
   - ß
   - '&mkp RCLK'
@@ -94,7 +94,7 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  - ']'
+  - +
   - AltGr+'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -104,7 +104,7 @@ layers:
   - +
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - AltGr+]
+  - '~'
   - ☺
   - {type: held}
   - {t: ▽, type: trans}
