@@ -2,7 +2,8 @@
     status = "okay";
 };
 
-&nice_view {
+/* Wir suchen das Display-Gerät direkt auf dem SPI-Bus */
+&ls0xx {
     status = "okay";
     /* Hier kannst du die Rotation anpassen: 0, 90, 180, 270 */
     rotation = <90>;
