@@ -2,6 +2,10 @@ parse_config:
   raw_binding_map:
     # --- OBEN LINKS (Zirkumflex/Grad) ---
     "&kp GRAVE": {t: "^", s: "°"}
+    # --- RAUTE / HOCHKOMMA ---
+    "&kp NON_US_HASH": {t: "#", s: "'"}
+    # --- PIPE ---
+    "&kp RA(NON_US_BSLH)": "|"
     
     # --- ZAHLENREIHE ---
     "&kp N1": {t: "1", s: "!"}
