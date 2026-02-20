@@ -83,20 +83,20 @@
 
         lower_layer {
             bindings = <
-&kp GRAVE       &trans              &trans              &trans              &trans            &trans      &trans      &trans      &trans      &trans
-&kp N1          &kp N2              &kp N3              &kp N4              &kp N5            &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
-&kp NON_US_BSLH &kp LS(NON_US_BSLH) &kp RA(NON_US_BSLH) &trans              &trans            &kp RA(N7)  &kp RA(N8)  &kp RA(N9)  &kp RA(N0)  &kp NON_US_HASH
-                                    &trans              &kp LGUI            &kp HOME          &kp END     &trans      &trans
+&kp GRAVE        &trans     &trans              &trans              &trans            &trans      &trans      &trans      &trans      &trans
+&kp N1           &kp N2     &kp N3              &kp N4              &kp N5            &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
+&kp NON_US_BSLH  &trans     &kp RA(NON_US_BSLH) &trans              &trans            &kp RA(N7)  &kp RA(N8)  &kp RA(N9)  &kp RA(N0)  &kp NON_US_HASH
+                            &trans              &kp LGUI            &kp HOME          &kp END     &trans      &trans
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         raise_layer {
             bindings = <
-&kp RA(Q)   &kp RA(E)   &trans     &trans     &trans          &trans    &kp LBKT      &kp RA(MINUS) &kp SEMI  &kp RPAR
-&kp SQT     &kp MINUS   &mkp RCLK  &mkp LCLK  &durchmesser    &kp UP    &kp LEFT      &kp DOWN      &kp RIGHT &kp RBKT
-&kp RA(SQT) &trans      &trans     &trans     &trans          &kp UNDER &kp PLUS      &trans        &trans    &kp RA(RBKT)
-                        &smiley    &trans     &trans          &trans    &trans        &trans
+&kp RA(Q)    &kp RA(E)   &trans     &trans     &trans          &trans    &kp LBKT      &kp RA(MINUS) &kp SEMI  &kp RPAR
+&kp SQT      &kp MINUS   &mkp RCLK  &mkp LCLK  &durchmesser    &kp UP    &kp LEFT      &kp DOWN      &kp RIGHT &kp RBKT
+&kp RA(SQT)  &trans      &trans     &trans     &trans          &kp UNDER &kp PLUS      &trans        &trans    &kp RA(RBKT)
+                         &smiley    &trans     &trans          &trans    &trans        &trans
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
