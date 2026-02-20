@@ -60,14 +60,14 @@ layers:
   - {t: '0', s: '='}
   - {t: <, s: '>'}
   - Sft+|
-  - AltGr+|
+  - '|'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '{'
   - '['
   - ']'
   - '}'
-  - '#'
+  - {t: '#', s: ''''}
   - {t: ▽, type: trans}
   - LGUI
   - {t: ⤒ Pos1, type: held}
