@@ -7,10 +7,11 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main        # <--- ZMK auf aktuellstem Stand
+      revision: main
       import: app/west.yml
     - name: nice-view-gem
       remote: mageslayer
-      revision: main        # <--- Gem passend zu ZMK main
+      revision: main
+      path: modules/nice-view-gem  # <--- Diesen Pfad explizit angeben!
   self:
     path: config
