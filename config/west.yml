@@ -7,8 +7,5 @@ manifest:
       remote: zmkfirmware
       revision: v0.3-branch
       import: app/west.yml
-    - name: nice-view-gem
-      url: https://github.com/M165437/nice-view-gem
-      revision: main
   self:
     path: config
