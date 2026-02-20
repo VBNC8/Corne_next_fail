@@ -39,7 +39,7 @@ layers:
   - {t: BSPC, h: adjust}
   lower:
   - {t: ^, s: °}
-  - Sft+`
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
