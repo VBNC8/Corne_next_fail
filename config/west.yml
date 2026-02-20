@@ -7,8 +7,9 @@ manifest:
       remote: zmkfirmware
       revision: main
       import:
+        # Pfad zur Datei innerhalb des ZMK Repos
         path: app/west.yml
-        # Hier filtern wir den "Ballast" raus:
+        # Exclude muss direkt unter import stehen
         exclude:
           - hal_altera
           - hal_ambiq
