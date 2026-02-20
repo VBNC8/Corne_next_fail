@@ -6,7 +6,25 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       revision: main
-      import: app/west.yml
+      import:
+        path: app/west.yml
+        # Hier filtern wir den "Ballast" raus:
+        exclude:
+          - hal_altera
+          - hal_ambiq
+          - hal_espressif
+          - hal_gigadevice
+          - hal_infineon
+          - hal_intel
+          - hal_microchip
+          - hal_nxp
+          - hal_openisa
+          - hal_quicklogic
+          - hal_renesas
+          - hal_silabs
+          - hal_st
+          - hal_ti
+          - hal_telink
     - name: nice-view-gem
       url: https://github.com/MageSlayer/nice-view-gem
       revision: main
