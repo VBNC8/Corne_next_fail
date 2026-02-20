@@ -1,5 +1,9 @@
+&spi0 {
+    status = "okay";
+};
 
-&nice_view_spi {
-    /* Probiere 0, 90, 180 oder 270 */
+&nice_view {
+    status = "okay";
+    /* Hier kannst du die Rotation anpassen: 0, 90, 180, 270 */
     rotation = <90>;
 };
