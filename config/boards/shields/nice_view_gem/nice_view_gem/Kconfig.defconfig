@@ -9,6 +9,6 @@ if SHIELD_NICE_VIEW_GEM
         default 64
 
     # Hier kommt die Rotation rein:
-    config LV_Z_ROTATE_180
+    config LV_Z_ROTATE_90
         default y
 endif
