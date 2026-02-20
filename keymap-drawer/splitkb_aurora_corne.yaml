@@ -39,10 +39,10 @@ layers:
   - {t: BSPC, h: adjust}
   lower:
   - {t: ^, s: °}
+  - F2
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - F4
+  - F5
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -113,10 +113,10 @@ layers:
   - {t: ▽, type: trans}
   adjust:
   - OUT BLE
-  - F2
   - {t: ▽, type: trans}
-  - F4
-  - F5
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
