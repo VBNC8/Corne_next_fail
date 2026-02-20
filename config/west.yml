@@ -5,10 +5,11 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      # Wir nutzen einen stabilen Stand vor dem Zephyr 4.1 Update
+      revision: v0.19.0 
       import: app/west.yml
     - name: nice-view-gem
       url: https://github.com/M165437/nice-view-gem
       revision: main
   self:
-    path: config
+    path: configconfig
