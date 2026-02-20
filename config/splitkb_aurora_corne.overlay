@@ -1,1 +1,13 @@
 
+/ {
+    chosen {
+        zmk,display = &nice_view;
+    };
+};
+
+&nice_view {
+    /* Wir tauschen Breite und Höhe manuell */
+    /* Das zwingt die ZMK-Widgets in das vertikale Layout */
+    width = <68>;
+    height = <160>;
+};
