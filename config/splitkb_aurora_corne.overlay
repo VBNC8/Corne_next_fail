@@ -5,11 +5,8 @@
 
 
 
-&nice_view_spi {
-    status = "okay";
-};
-
+/* Wir greifen direkt das Display-Label an, das durch die Shields definiert wird */
 &nice_view {
-    /* Hier wird gedreht: 0 = Standard, 1 = 90°, 2 = 180°, 3 = 270° */
+    /* 0 = Standard (hochkant), 1 = 90° im Uhrzeigersinn, 2 = 180°, 3 = 270° */
     transform-rotation = <1>;
 };
