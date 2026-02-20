@@ -22,7 +22,7 @@ parse_config:
 
     # --- RECHTE SEITE (Raise/Lower Fixes) ---
     "&kp RPAR": "="
-    "&kp RBKT": "+"
+    "&kp RBKT": {t: "+", s: "*"}
     "&kp RA(RBKT)": "~"
     "&kp SEMI": "Ö"
     "&kp SQT": "Ä"
