@@ -38,7 +38,7 @@ layers:
   - {t: SPACE, h: raise}
   - {t: BSPC, h: adjust}
   lower:
-  - '`'
+  - {t: ^, s: °}
   - Sft+`
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -81,11 +81,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ^
-  - {t: ü, s: Ü}
+  - Ü
   - \
-  - {t: ö, s: Ö}
+  - Ö
   - '='
-  - {t: ä, s: Ä}
+  - Ä
   - {t: ß, s: '?'}
   - 🖱️ R
   - 🖱️ L
