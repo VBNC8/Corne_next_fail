@@ -149,21 +149,21 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   rgb:
+  - RGB TOG
+  - RGB EFF
+  - RGB BRI
+  - RGB SAI
+  - RGB HUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - RGB EFR
+  - RGB BRD
+  - RGB SAD
+  - RGB HUD
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -181,7 +181,7 @@ layers:
   - {t: ▽, type: trans}
   - BT CLR
   - {type: held}
-  - {type: held}
+  - {t: '&bat_check', type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
