@@ -154,7 +154,7 @@ layers:
   - RGB BRI
   - RGB SAI
   - RGB HUI
-  - {t: ▽, type: trans}
+  - '&bat_check'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -181,7 +181,7 @@ layers:
   - {t: ▽, type: trans}
   - BT CLR
   - {type: held}
-  - {t: '&bat_check', type: held}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
