@@ -1,5 +1,29 @@
+#include <dt-bindings/led/led.h>
+
+/* Lösche die existierende Definition des Shields, um Platz für unsere eigene zu machen */
+/ {
+    /delete-node/ led_strip;
+};
+
 &spi3 {
+    status = "okay";
+    /* Wir definieren den Strip hier komplett neu mit der korrekten Länge */
     led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        reg = <0>;
+        spi-max-frequency = <4000000>;
+
+        /* HIER DIE ANZAHL ANPASSEN */
         chain-length = <24>; /* 6 Underglow + 18 Keys */
+
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+    };
+};
+
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
     };
 };
