@@ -7,9 +7,5 @@ manifest:
       remote: zmkfirmware
       revision: v0.3-branch
       import: app/west.yml
-    - name: zmk-view
-      remote: zmkfirmware
-      repo-path: ../NickConroy/zmk-view
-      revision: main
   self:
     path: config
