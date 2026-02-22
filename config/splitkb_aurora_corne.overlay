@@ -1,1 +1,5 @@
-
+&nice_view {
+    status = "okay";
+    segment-remap;
+    com-invdir;
+};
