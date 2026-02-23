@@ -13,7 +13,7 @@
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
         spi-max-frequency = <4000000>;
-        chain-length = <18>; /* Da Underglow weg ist, nur Switches */
+        chain-length = <18>; 
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
         color-mapping = <2 1 3>; // Green, Red, Blue
@@ -23,16 +23,9 @@
 / {
     chosen {
         zmk,underglow = &led_strip;
-    };
-};
-
-/ {
-    /* MATRIX-ANPASSUNG */
-    chosen {
         zmk,matrix_transform = &five_column_transform;
     };
 
-    /* TRI-LAYER LOGIK */
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -42,14 +35,12 @@
     };
 
     macros {
-        // Makro für: Wechsel zu USB + LEDs AN
         usb_on: usb_on {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&out OUT_USB>, <&rgb_ug RGB_ON>;
         };
 
-        // Makro für: Wechsel zu BT + LEDs AUS
         bt_off: bt_off {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -69,7 +60,6 @@
             tap-ms = <20>;
             bindings = <&macro_press &kp LSHFT>, <&macro_tap &kp COMMA>, <&macro_release &kp LSHFT>, <&macro_tap &kp SLASH>, <&macro_press &kp LSHFT>, <&macro_tap &kp N9>, <&macro_release &kp LSHFT>;
         };
-
     };
 
     behaviors {
@@ -127,7 +117,7 @@
 
         raise_layer {
             bindings = <
-&kp RA(Q)    &kp RA(E)   &trans     &trans     &trans              &trans     &kp LBKT      &kp RA(MINUS)  &kp SEMI  &kp RPAR
+&kp RA(Q)    &trans      &kp RA(E)  &trans     &trans              &trans     &kp LBKT      &kp RA(MINUS)  &kp SEMI  &kp RPAR
 &kp SQT      &kp MINUS   &mkp RCLK  &mkp LCLK  &durchmesser        &kp UP     &kp LEFT      &kp DOWN       &kp RIGHT &kp RBKT
 &kp RA(SQT)  &trans      &trans     &trans     &trans              &trans     &kp PLUS      &trans         &trans    &kp RA(RBKT)
                          &smiley    &trans     &trans              &trans     &trans        &trans
@@ -147,12 +137,11 @@
 
         rgb_layer {
             bindings = <
-&rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI    &bat_check  &trans  &trans  &trans  &trans
+&rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI    &trans      &trans  &trans  &trans  &trans
 &trans           &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD    &trans      &trans  &trans  &trans  &trans
 &trans           &trans           &trans           &trans           &trans             &trans      &trans  &trans  &trans  &trans
                                   &bt BT_CLR       &trans           &trans             &trans      &trans  &trans
             >;
-            // Hier nutzen wir wieder die funktionierende Lautstärke-Steuerung
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>; 
         };
     };
