@@ -117,7 +117,7 @@
 
         raise_layer {
             bindings = <
-&kp RA(Q)    &trans      &kp RA(E)  &trans     &trans              &trans     &kp LBKT      &kp RA(MINUS)  &kp SEMI  &kp RPAR
+&kp RA(Q)    &kp RA(M)   &kp RA(E)  &trans     &trans              &trans     &kp LBKT      &kp RA(MINUS)  &kp SEMI  &kp RPAR
 &kp SQT      &kp MINUS   &mkp RCLK  &mkp LCLK  &durchmesser        &kp UP     &kp LEFT      &kp DOWN       &kp RIGHT &kp RBKT
 &kp RA(SQT)  &trans      &trans     &trans     &trans              &trans     &kp PLUS      &trans         &trans    &kp RA(RBKT)
                          &smiley    &trans     &trans              &trans     &trans        &trans
@@ -127,7 +127,7 @@
 
         adjust_layer {
             bindings = <
-&bt_off       &trans             &trans            &trans        &trans          &trans  &trans  &trans      &trans      &trans
+&bt_off       &kp RA(N2)         &kp RA(N3)        &trans        &trans          &trans  &trans  &trans      &trans      &kp LA(F4)
 &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans      &trans      &trans
 &usb_on       &ext_power EP_TOG  &ext_power EP_ON  &trans        &trans          &trans  &trans  &kp C_PREV  &kp C_NEXT  &trans
                                  &kp F10           &trans        &trans          &trans  &trans  &trans
