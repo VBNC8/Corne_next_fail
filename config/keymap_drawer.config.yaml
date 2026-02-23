@@ -51,12 +51,19 @@ parse_config:
     "&smiley": "☺"
     "&durchmesser": "Ø"
 
-draw_config:
-  dark_mode: true
-  n_columns: 1
-  split_gap: 30.0
-  draw_key_caps: true
-  append_minus_to_shifted_label: false
-  key_w: 60.0
-  key_h: 56.0
+
+    # --- LAYER KEYS ROT FÄRBEN ---
+    "&mo 1": {t: "lower", type: held}
+    "&mo 2": {t: "raise", type: held}
+    "&mo 3": {t: "adjust", type: held}
+  
+  draw_config:
+    dark_mode: true
+    n_columns: 1
+    split_gap: 30.0
+    draw_key_caps: true
+    append_minus_to_shifted_label: false
+    key_w: 60.0
+    key_h: 56.0
+
 
