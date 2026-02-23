@@ -20,7 +20,7 @@ layers:
   - {t: J, s: SHIFT}
   - {t: K, s: CTRL}
   - L
-  - /
+  - {t: '-', s: _}
   - Z
   - {t: X, s: ALT}
   - C
