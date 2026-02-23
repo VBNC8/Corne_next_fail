@@ -80,29 +80,20 @@ draw_config:
   dark_mode: true
   n_columns: 1
   split_gap: 30.0
-  draw_key_caps: true
-  append_minus_to_shifted_label: false
   key_w: 60.0
   key_h: 56.0
+  draw_key_caps: true
   
-  # Farben für die Layer-Hintergründe (die kleinen Labels oben)
-  layer_colors:
-    lower: "lightcoral"
-    raise: "lightblue"
-    adjust: "plum"
-    rgb_layer: "limegreen"
-
-  # CSS für die spezifischen Tasten-Farben
   append_style: |
-    /* Wir zielen direkt auf das Rechteck der Taste ab */
-    .lower_l rect.key { fill: #ffb3b3 !important; }
-    .lower_r rect.key { fill: #b30000 !important; }
-    .raise_l rect.key { fill: #b3d9ff !important; }
-    .raise_r rect.key { fill: #004d99 !important; }
-    .adjust_style rect.key { fill: #e6ccff !important; }
+    /* Selektiert die Gruppe UND das Rechteck darin */
+    g.lower_l rect.key { fill: #ffb3b3 !important; stroke: #ffb3b3 !important; }
+    g.lower_r rect.key { fill: #b30000 !important; stroke: #b30000 !important; }
+    g.raise_l rect.key { fill: #b3d9ff !important; stroke: #b3d9ff !important; }
+    g.raise_r rect.key { fill: #004d99 !important; stroke: #004d99 !important; }
+    g.adjust_style rect.key { fill: #e6ccff !important; stroke: #e6ccff !important; }
 
-    /* Text-Kontrast erzwingen */
-    .lower_r text, .raise_r text { fill: #ffffff !important; }
+    /* Weißer Text für die dunklen Tasten */
+    g.lower_r text, g.raise_r text { fill: white !important; }
     
-    /* Falls du die Umrandung auch färben willst: */
-    .lower_l rect.key { stroke: #ffb3b3; }
+    /* Optional: Symbole etwas fetter */
+    text.main { font-weight: bold; }
