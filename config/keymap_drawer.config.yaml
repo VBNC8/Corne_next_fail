@@ -51,7 +51,6 @@ parse_config:
     "&smiley": "☺"
     "&durchmesser": "Ø"
 
-
     # --- LAYER KEYS ROT FÄRBEN ---
     "&mo 1": {t: "lower", type: held}
     "&mo 2": {t: "raise", type: held}
