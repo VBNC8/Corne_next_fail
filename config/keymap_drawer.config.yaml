@@ -51,6 +51,24 @@ parse_config:
     "&smiley": "☺"
     "&durchmesser": "Ø"
 
+    # --- NEUE TECHNISCHE ZEICHEN ---
+    "&kp RA(M)": "µ"
+    "&kp RA(N2)": "²"
+    "&kp RA(N3)": "³"
+    
+    # --- SYSTEM-STEUERUNG ---
+    "&kp LA(F4)": {t: "Alt+F4", s: "❌ Close"}
+    "&usb_on": {t: "USB", s: "💡 ON"}
+    "&bt_off": {t: "BT", s: "🌙 OFF"}
+    
+    # --- MODIFIER FIXES FÜR DIE GRAFIK ---
+    "&hrm_safe LCTRL D": {t: "D", s: "CTRL"}
+    "&hrm_shift LSHIFT F": {t: "F", s: "SHIFT"}
+    "&hrm_shift RSHIFT J": {t: "J", s: "SHIFT"}
+    "&hrm_safe RCTRL K": {t: "K", s: "CTRL"}
+    "&hrm_safe LALT X": {t: "X", s: "ALT"}
+    "&hrm_safe RALT DOT": {t: ".", s: "ALTGR"}
+
 draw_config:
   dark_mode: true
   n_columns: 1
