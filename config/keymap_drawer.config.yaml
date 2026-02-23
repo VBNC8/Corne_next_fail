@@ -1,25 +1,23 @@
 parse_config:
   raw_binding_map:
-    # --- OBEN LINKS (Zirkumflex/Grad) ---
-    "&kp GRAVE": {t: "^", s: "°"}
-    # --- RAUTE / HOCHKOMMA ---
-    "&kp NON_US_HASH": {t: "#", s: "'"}
-    # --- PIPE ---
-    "&kp RA(NON_US_BSLH)": "|"
-    "&kp PLUS": "`"
-    
+    # --- LAYER TAPS (Mit Farb-Zuweisung) ---
+    "&lt 1 TAB": {t: "⇥", s: "Lower", type: "lower_l"} 
+    "&lt 1 RET": {t: "⏎", s: "Lower", type: "lower_r"} 
+    "&lt 2 ESC": {t: "⎋", s: "Raise", type: "raise_l"} 
+    "&lt_hp 2 SPACE": {t: "␣", s: "Raise", type: "raise_r"}
+    "&lt_hp 3 BSPC": {t: "⌫", s: "Adjust", type: "adjust_style"}
+
     # --- EINGABE & NAVIGATION ---
     "&kp RET": "⏎"
-    "&lt 1 RET": {t: "⏎", s: "Lower"}
-    "&lt_hp 2 SPACE": {t: "␣", s: "Raise"}
     "&kp BSPC": "⌫"
     "&kp DEL": "⌦"
+    "&kp HOME": "⤒ Pos1"
+    "&kp END": "⤓ Ende"
+    "&kp LGUI": "⊞"
+    "&kp GRAVE": {t: "^", s: "°"}
+    "&kp PLUS": "`"
 
-    # --- MULTIMEDIA ---
-    "&kp C_PREV": "⏮"
-    "&kp C_NEXT": "⏭"
-    
-    # --- ZAHLENREIHE ---
+    # --- ZAHLEN & DEUTSCHE FIXES ---
     "&kp N1": {t: "1", s: "!"}
     "&kp N2": {t: "2", s: "\""}
     "&kp N3": {t: "3", s: "§"}
@@ -30,19 +28,10 @@ parse_config:
     "&kp N8": {t: "8", s: "("}
     "&kp N9": {t: "9", s: ")"}
     "&kp N0": {t: "0", s: "="}
-
-    # --- RECHTE SEITE (Raise/Lower Fixes) ---
-    "&kp RPAR": "="
-    "&kp RBKT": {t: "+", s: "*"}
-    "&kp RA(RBKT)": "~"
+    "&kp MINUS": {t: "ß", s: "?"}
     "&kp SEMI": "Ö"
     "&kp SQT": "Ä"
     "&kp LBKT": "Ü"
-    "&kp MINUS": {t: "ß", s: "?"}
-    "&kp SLASH": {t: "-", s: "_"}
-    "&kp NON_US_BSLH": {t: "<", s: ">"}
-
-    # --- ALTGR / KLAMMERN ---
     "&kp RA(N7)": "{"
     "&kp RA(N8)": "["
     "&kp RA(N9)": "]"
@@ -51,37 +40,35 @@ parse_config:
     "&kp RA(E)": "€"
     "&kp RA(MINUS)": "\\"
     "&kp RA(SQT)": "´"
+    "&kp RA(NON_US_BSLH)": "|"
+    "&kp NON_US_HASH": {t: "#", s: "'"}
+    "&kp NON_US_BSLH": {t: "<", s: ">"}
 
-    # --- MAUS & NAVIGATION ---
-    "&mkp LCLK": "🖱️ L"
-    "&mkp RCLK": "🖱️ R"
-    "&kp HOME": "⤒ Pos1"
-    "&kp END": "⤓ Ende"
-    "&kp BSPC": "⌫"
-    "&kp DEL": "⌦"
-    
-    # --- MACROS ---
-    "&smiley": "☺"
-    "&durchmesser": "Ø"
+    # --- MULTIMEDIA & MAUS ---
+    "&kp C_PREV": "⏮"
+    "&kp C_NEXT": "⏭"
+    "&kp C_PP": "⏯"
+    "&mkp LCLK": "🖱 L"
+    "&mkp RCLK": "🖱 R"
 
-    # --- NEUE TECHNISCHE ZEICHEN ---
-    "&kp RA(M)": "µ"
-    "&kp RA(N2)": "²"
-    "&kp RA(N3)": "³"
-    
-    # --- SYSTEM-STEUERUNG ---
-    "&kp LA(F4)": {t: "Alt+F4", s: "✕"}
+    # --- SYSTEM & BT ---
     "&usb_on": {t: "ψ USB", s: "☀ ON"}  
-    "&bt_off": {t: "ᛒ BT", s: "☀ OFF"}
-    "&kp LGUI": "⊞"
-
+    "&bt_off": {t: "ᛒ BT", s: "☾ OFF"}
     "&bt BT_SEL 0": "ᛒ ➀"
     "&bt BT_SEL 1": "ᛒ ➁"
     "&bt BT_SEL 2": "ᛒ ➂"
     "&bt BT_SEL 3": "ᛒ ➃"
     "&bt BT_SEL 4": "ᛒ ➄"
+    "&kp LA(F4)": {t: "✕", s: "Alt+F4"}
     
-    # --- MODIFIER FIXES FÜR DIE GRAFIK ---
+    # --- MAKROS & SPEZIAL ---
+    "&smiley": "☻"
+    "&durchmesser": "Ø"
+    "&kp RA(M)": "µ"
+    "&kp RA(N2)": "²"
+    "&kp RA(N3)": "³"
+
+    # --- MODIFIER FIXES ---
     "&hrm_safe LCTRL D": {t: "D", s: "CTRL"}
     "&hrm_shift LSHIFT F": {t: "F", s: "SHIFT"}
     "&hrm_shift RSHIFT J": {t: "J", s: "SHIFT"}
@@ -97,15 +84,18 @@ draw_config:
   append_minus_to_shifted_label: false
   key_w: 60.0
   key_h: 56.0
-  draw_config:
   
+  append_style: |
+    rect.lower_l { fill: #ffb3b3; }
+    rect.lower_r { fill: #b30000; }
+    rect.raise_l { fill: #b3d9ff; }
+    rect.raise_r { fill: #004d99; }
+    rect.adjust_style { fill: #e6ccff; }
+    .lower_r text, .raise_r text { fill: #ffffff !important; }
+    text.side { font-size: 10px; font-weight: bold; }
+    
   layer_colors:
-    lower: "lightcoral"   # Hellrot
-    raise: "lightblue"    # Hellblau
-    adjust: "plum"        # Violett/Lila
-    rgb_layer: "limegreen" # Grün
-
-    raw_binding_map:
-  # --- LOWER LAYER (ROT) ---
-  "&lt 1 TAB": {t: "⇥", s: "Lower", type: "lower_l"} # Hellrot (Links)
-  "&lt 1 RET": {t: "⏎", s: "Lower", type: "lower_r"} # Dunkelrot (Rechts)
+    lower: "lightcoral"
+    raise: "lightblue"
+    adjust: "plum"
+    rgb_layer: "limegreen"
