@@ -60,7 +60,3 @@ draw_config:
   key_w: 60.0
   key_h: 56.0
 
-  # --- LAYER KEYS ROT FÄRBEN ---
-    "&mo 1": {t: "lower", type: held}
-    "&mo 2": {t: "raise", type: held}
-    "&mo 3": {t: "adjust", type: held}
