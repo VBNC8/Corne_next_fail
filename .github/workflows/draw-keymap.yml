@@ -1,23 +1,17 @@
 name: Draw ZMK keymaps
 on:
-  workflow_dispatch: # Erlaubt manuelles Starten
+  workflow_dispatch:
   push:
     paths:
       - "config/*.keymap"
       - "config/*.dtsi"
       - ".github/workflows/draw-keymap.yml"
-      - "config/keymap_drawer.config.yaml"   
+      - "config/keymap_drawer.config.yaml"
 
 jobs:
   draw:
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     with:
-      keymap_patterns: "config/*.keymap"
-      output_folder: "keymap-drawer"
-      config_path: "config/keymap_drawer.config.yaml" # <--- Diese Zeile hinzufügen!
-      commit_message: "docs: [keymap-drawer] Symbole und Layout verfeinert"
-
-with:
       keymap_patterns: "config/*.keymap"
       output_folder: "keymap-drawer"
       config_path: "config/keymap_drawer.config.yaml"
