@@ -20,7 +20,7 @@ layers:
   - {t: J, s: SHIFT}
   - {t: K, s: CTRL}
   - L
-  - {t: '-', s: _}
+  - /
   - Z
   - {t: X, s: ALT}
   - C
@@ -31,12 +31,12 @@ layers:
   - ','
   - {t: ., s: ALTGR}
   - ⌦
-  - PP
-  - {t: ESC, h: raise}
-  - {t: TAB, h: lower}
-  - {t: ⏎, s: Lower}
-  - {t: ␣, s: Raise}
-  - {t: ⌫, h: adjust}
+  - ⏯
+  - {t: ⎋, s: Raise, type: raise_l}
+  - {t: ⇥, s: Lower, type: lower_l}
+  - {t: ⏎, s: Lower, type: lower_r}
+  - {t: ␣, s: Raise, type: raise_r}
+  - {t: ⌫, s: Adjust, type: adjust_style}
   lower:
   - {t: ^, s: °}
   - F2
@@ -70,7 +70,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ⊞
-  - {t: ⤒ Pos1, type: held}
+  - ⤒ Pos1
   - ⤓ Ende
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -84,17 +84,17 @@ layers:
   - Ü
   - \
   - Ö
-  - '='
+  - )
   - Ä
   - {t: ß, s: '?'}
-  - 🖱️ R
-  - 🖱️ L
+  - 🖱 R
+  - 🖱 L
   - Ø
   - UP
   - LEFT
   - DOWN
   - RIGHT
-  - {t: +, s: '*'}
+  - ']'
   - ´
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -104,15 +104,15 @@ layers:
   - '`'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '~'
-  - ☺
-  - {type: held}
+  - AltGr+]
+  - ☻
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   adjust:
-  - {t: ᛒ BT, s: ☀ OFF}
+  - {t: ᛒ BT, s: ☾ OFF}
   - ²
   - ³
   - {t: ▽, type: trans}
@@ -121,7 +121,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Alt+F4, s: ✕}
+  - {t: ✕, s: Alt+F4}
   - ᛒ ➀
   - ᛒ ➁
   - ᛒ ➂
@@ -147,7 +147,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   rgb:
   - RGB TOG
   - RGB EFF
@@ -180,8 +180,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BT CLR
-  - {type: held}
-  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
