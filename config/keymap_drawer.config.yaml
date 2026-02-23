@@ -86,24 +86,26 @@ draw_config:
   key_w: 60.0
   key_h: 56.0
   
-  # Diese Farben färben die kleinen Layer-Indikatoren oben rechts an den Tasten
-  layer_colors:
-    lower: "lightcoral"
-    raise: "lightblue"
-    adjust: "plum"
-
   append_style: |
-    /* 1. Färbe Tasten basierend auf dem Typen, den wir oben vergeben haben */
-    .lower_l rect.key { fill: #ffb3b3 !important; }
-    .lower_r rect.key { fill: #b30000 !important; }
-    .raise_l rect.key { fill: #b3d9ff !important; }
-    .raise_r rect.key { fill: #004d99 !important; }
-    .adjust_style rect.key { fill: #e6ccff !important; }
+    /* FARBEN FÜR DIE DAUMENTASTEN ÜBER POSITION (Index-basiert) */
+    /* Daumen-Tasten sind beim 36-Key Corne meist die Indizes 30-35 */
+    
+    /* Taste 32: &lt 1 TAB (Lower Links - Hellrot) */
+    g.key:nth-of-type(33) rect.key { fill: #ffb3b3 !important; stroke: #ffb3b3 !important; }
+    
+    /* Taste 33: &lt 1 RET (Lower Rechts - Dunkelrot) */
+    g.key:nth-of-type(34) rect.key { fill: #b30000 !important; stroke: #b30000 !important; }
+    g.key:nth-of-type(34) text { fill: white !important; }
 
-    /* 2. Sicherheits-Netz: Falls 'type' ignoriert wird, nutze die Layer-Klassen des Drawers */
-    /* Das färbt ALLE Tasten im jeweiligen Layer ein (gut zum Testen) */
-    /* .layer-lower rect.key { fill: rgba(240, 128, 128, 0.2) !important; } */
+    /* Taste 31: &lt 2 ESC (Raise Links - Hellblau) */
+    g.key:nth-of-type(32) rect.key { fill: #b3d9ff !important; stroke: #b3d9ff !important; }
 
-    /* 3. Text-Kontrast */
-    .lower_r text, .raise_r text { fill: white !important; }
-    text.main { font-weight: bold; font-family: sans-serif; }
+    /* Taste 34: &lt_hp 2 SPACE (Raise Rechts - Dunkelblau) */
+    g.key:nth-of-type(35) rect.key { fill: #004d99 !important; stroke: #004d99 !important; }
+    g.key:nth-of-type(35) text { fill: white !important; }
+
+    /* Taste 35: &lt_hp 3 BSPC (Adjust - Lila) */
+    g.key:nth-of-type(36) rect.key { fill: #e6ccff !important; stroke: #e6ccff !important; }
+
+    /* Allgemeine Verschönerung */
+    text.main { font-weight: bold; }
