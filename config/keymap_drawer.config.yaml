@@ -51,6 +51,11 @@ parse_config:
     "&kp RPAR": "="
     "&kp RBKT": {t: "+", s: "*"}
 
+     # --- MATHEMATISCHE ZEICHEN ---
+    "&kp RA(COMMA)": "≤"
+    "&kp RA(DOT)": "≥"
+    "&kp RA(SLASH)": "≠"
+    
     # --- MULTIMEDIA & MAUS ---
     "&kp C_PREV": "⏮"
     "&kp C_NEXT": "⏭"
