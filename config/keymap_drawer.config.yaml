@@ -11,11 +11,8 @@ parse_config:
     "&mo 3": {t: "Adjust", type: "held"}
 
     # --- DEUTSCHE TASTEN & SYMBOLE ---
-    "&kp LGUI": "$$mdi:microsoft-windows-classic$$"
     "&kp LC(LS(ESC))": "Task Mgr"
     "&nbsp": "&nbsp"
-    "&kp HOME": "⤒ Pos1"
-    "&kp END": "⤓ End"
 
     # --- EINGABE & NAVIGATION ---
     "&kp RET": "⏎"
@@ -93,15 +90,9 @@ parse_config:
     "&hrm_safe LALT X": {t: "X", s: "Alt"}
     "&hrm_safe RALT DOT": {t: ".", s: "AltGr"}
 
-    # --- SPEZIALZEICHEN ---
-    "&nbsp": "&nbsp"  # Oder "SPACE" (geschützt)
-
-    # --- SYSTEM-FUNKTIONEN ---
-    "&kp LC(LS(ESC))": "Task Mgr"
-
 draw_config:
   dark_mode: true
   n_columns: 1
-  # Falls das Layout immer noch verschoben ist, lösche key_w und key_h!
-  # Er nutzt dann die Standardwerte deiner Aurora Corne.
-  
+  key_w: 60
+  key_h: 56
+  split_gap: 30
