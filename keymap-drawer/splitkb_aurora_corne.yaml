@@ -13,32 +13,32 @@ layers:
   - P
   - A
   - S
-  - {t: D, h: LCTRL}
-  - {t: F, h: LSHIFT}
+  - {t: D, s: CTRL}
+  - {t: F, s: Shift}
   - G
   - H
-  - {t: J, h: RSHIFT}
-  - {t: K, h: RCTRL}
+  - {t: J, s: Shift}
+  - {t: K, s: CTRL}
   - L
-  - /
+  - {t: '-', s: _}
   - Z
-  - {t: X, h: LALT}
+  - {t: X, s: Alt}
   - C
   - V
   - B
   - N
   - M
   - ','
-  - {t: ., h: RALT}
-  - DEL
-  - PP
+  - {t: ., s: AltGr}
+  - ⌦
+  - ⏯
   - {t: ESC, s: Raise, type: held}
   - {t: ⇥, s: Lower, type: held}
   - {t: ↵, s: Lower, type: held}
   - {t: ␣, s: Raise, type: held}
   - {t: ⌫, s: Adjust, type: held}
   lower:
-  - '`'
+  - {t: ^, s: °}
   - F2
   - {t: ▽, type: trans}
   - F4
@@ -48,25 +48,25 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
+  - {t: '1', s: '!'}
+  - {t: '2', s: '"'}
+  - {t: '3', s: §}
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
+  - {t: '6', s: '&'}
+  - {t: '7', s: /}
+  - {t: '8', s: (}
+  - {t: '9', s: )}
+  - {t: '0', s: '='}
+  - {t: <, s: '>'}
+  - {t: ▽, type: trans}
   - '|'
   - {t: ▽, type: trans}
-  - AltGr+|
-  - {t: ▽, type: trans}
-  - '#'
-  - AltGr+7
-  - AltGr+8
-  - AltGr+9
-  - AltGr+0
+  - {t: '#', s: ''''}
+  - '{'
+  - '['
+  - ']'
+  - '}'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - $$mdi:microsoft-windows-classic$$
@@ -75,72 +75,72 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   raise:
-  - AltGr+Q
-  - AltGr+M
-  - AltGr+E
+  - '@'
+  - µ
+  - €
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '['
-  - AltGr+-
-  - ;
-  - )
-  - ''''
-  - '-'
-  - '&mkp RCLK'
-  - '&mkp LCLK'
-  - '&durchmesser'
+  - Ü
+  - \
+  - Ö
+  - '='
+  - Ä
+  - {t: ß, s: '?'}
+  - 🖱 RMB
+  - 🖱 LMB
+  - Ø
   - UP
   - LEFT
   - DOWN
   - RIGHT
-  - ']'
-  - AltGr+'
+  - {t: +, s: '*'}
+  - ´
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - +
+  - '`'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - AltGr+]
-  - '&smiley'
+  - '~'
+  - ☻
   - Task Mgr
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - NBSP
   - {t: ▽, type: trans}
   adjust:
-  - '&bt_off'
-  - AltGr+2
-  - AltGr+3
+  - {t: '$$mdi:bluetooth$$', s: ☀ OFF}
+  - ²
+  - ³
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Alt+F4
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
+  - {t: ✕, s: Alt F4}
+  - {t: '$$mdi:bluetooth$$', s: ⓵}
+  - {t: '$$mdi:bluetooth$$', s: ⓶}
+  - {t: '$$mdi:bluetooth$$', s: ⓷}
+  - {t: '$$mdi:bluetooth$$', s: ⓸}
+  - {t: '$$mdi:bluetooth$$', s: ⓹}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&usb_on'
+  - {t: ψ USB, s: ☀ ON}
   - EP TOG
   - EP ON
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - PREV
-  - NEXT
+  - ⏮
+  - ⏭
   - {t: ▽, type: trans}
   - F10
   - {t: ▽, type: trans}
