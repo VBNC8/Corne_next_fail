@@ -78,7 +78,7 @@ layers:
   - '@'
   - µ
   - €
-  - '&leq'
+  - '&plusminus'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ü
