@@ -1,5 +1,9 @@
 parse_config:
   raw_binding_map:
+    "&mo 1": {t: "lower", type: "held"}
+    "&mo 2": {t: "raise", type: "held"}
+    "&mo 3": {t: "adjust", type: "held"}
+    
     # --- WICHTIG: Prüfe ob diese exakt so in deiner .keymap stehen ---
     "&lt 1 TAB": {t: "⇥", s: "Lower"}
     "&lt 1 RET": {t: "↵", s: "Lower"}
