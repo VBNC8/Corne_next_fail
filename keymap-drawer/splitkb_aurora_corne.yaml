@@ -122,11 +122,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ✕, s: Alt F4}
-  - $$mdi:bluetooth$$ ⓵
-  - $$mdi:bluetooth$$ ⓶
-  - $$mdi:bluetooth$$ ⓷
-  - $$mdi:bluetooth$$ ⓸
-  - $$mdi:bluetooth$$ ⓹
+  - {t: '$$mdi:bluetooth$$', s: ⓵}
+  - {t: '$$mdi:bluetooth$$', s: ⓶}
+  - {t: '$$mdi:bluetooth$$', s: ⓷}
+  - {t: '$$mdi:bluetooth$$', s: ⓸}
+  - {t: '$$mdi:bluetooth$$', s: ⓹}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
