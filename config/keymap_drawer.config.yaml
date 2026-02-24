@@ -112,3 +112,13 @@ draw_config:
   append_minus_to_shifted_label: false
   key_w: 60.0
   key_h: 56.0
+  svg_style: |
+    /* Das hier färbt die gehaltenen Tasten (Layer-Modifier) rot */
+    rect.held, rect.ghost {
+        fill: #ff4500 !important; /* Ein kräftiges Orangerot */
+        fill-opacity: 0.8 !important;
+    }
+    /* Das färbt den Text auf diesen Tasten weiß für besseren Kontrast */
+    .held text, .ghost text {
+        fill: white !important;
+    }
