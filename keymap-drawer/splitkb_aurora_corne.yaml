@@ -106,7 +106,7 @@ layers:
   - {t: ▽, type: trans}
   - '~'
   - ☻
-  - {t: ▽, type: trans}
+  - Ctl+Sft+ESC
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&nbsp'
