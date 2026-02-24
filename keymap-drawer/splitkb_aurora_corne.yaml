@@ -14,25 +14,25 @@ layers:
   - A
   - S
   - {t: D, s: CTRL}
-  - {t: F, s: SHIFT}
+  - {t: F, s: Shift}
   - G
   - H
-  - {t: J, s: SHIFT}
+  - {t: J, s: Shift}
   - {t: K, s: CTRL}
   - L
   - {t: '-', s: _}
   - Z
-  - {t: X, s: ALT}
+  - {t: X, s: Alt}
   - C
   - V
   - B
   - N
   - M
   - ','
-  - {t: ., s: ALTGR}
+  - {t: ., s: AltGr}
   - ⌦
   - ⏯
-  - {t: ⎋, s: Raise}
+  - {t: ESC, s: Raise}
   - {t: ⇥, s: Lower}
   - {t: ⏎, s: Lower}
   - {t: ␣, s: Raise}
@@ -71,7 +71,7 @@ layers:
   - {t: ▽, type: trans}
   - ⊞
   - ⤒ Pos1
-  - ⤓ Ende
+  - ⤓ End
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   raise:
