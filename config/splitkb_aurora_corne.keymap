@@ -71,6 +71,30 @@
                 , <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N6 &kp KP_N0>
                 , <&macro_release &kp LALT>;
         };
+
+        // Kleiner-Gleich (≤) via Alt + 8804 (Unicode) oder Alt + 243 (OEM)
+        // Am sichersten unter Windows: Alt + 243
+        lte: lte {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N2 &kp KP_N4 &kp KP_N3>, <&macro_release &kp LALT>;
+        };
+
+        // Größer-Gleich (≥) via Alt + 242
+        gte: gte {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N2 &kp KP_N4 &kp KP_N2>, <&macro_release &kp LALT>;
+        };
+
+        // Ungleich (≠) via Alt + 8800 (Unicode) - Erfordert meist Registry-Eintrag EnableHexNumpad
+        // Alternative für Windows: Alt + 0185 (je nach Zeichensatz oft anders)
+        // Sicherer Weg für ≠ ohne Registry:
+        not_eq: not_eq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N8 &kp KP_N8 &kp KP_N0 &kp KP_N0>, <&macro_release &kp LALT>;
+        };
     };
 
     behaviors {
@@ -128,10 +152,10 @@
 
         raise_layer {
             bindings = <
-&kp RA(Q)    &kp RA(M)   &kp RA(E)  &kp RA(COMMA)     &kp RA(DOT)         &kp RA(SLASH)   &kp LBKT      &kp RA(MINUS)  &kp SEMI  &kp RPAR
-&kp SQT      &kp MINUS   &mkp RCLK  &mkp LCLK         &durchmesser        &kp UP          &kp LEFT      &kp DOWN       &kp RIGHT &kp RBKT
-&kp RA(SQT)  &trans      &trans     &trans            &trans              &trans          &kp PLUS      &trans         &trans    &kp RA(RBKT)
-                         &smiley    &kp LC(LS(ESC))   &trans              &trans          &nbsp         &trans
+&kp RA(Q)    &kp RA(M)   &kp RA(E)  &lte              &gte                 &not_eq    &kp LBKT      &kp RA(MINUS)  &kp SEMI  &kp RPAR
+&kp SQT      &kp MINUS   &mkp RCLK  &mkp LCLK         &durchmesser         &kp UP     &kp LEFT      &kp DOWN       &kp RIGHT &kp RBKT
+&kp RA(SQT)  &trans      &trans     &trans            &trans               &trans     &kp PLUS      &trans         &trans    &kp RA(RBKT)
+                         &smiley    &kp LC(LS(ESC))   &trans               &trans     &nbsp         &trans
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
