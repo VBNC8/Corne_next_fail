@@ -78,9 +78,9 @@ layers:
   - '@'
   - µ
   - €
-  - '&lte'
-  - '&gte'
-  - '&not_eq'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - Ü
   - \
   - Ö
