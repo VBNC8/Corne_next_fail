@@ -91,6 +91,9 @@ parse_config:
     # --- SPEZIALZEICHEN ---
     "&nbsp": "&nbsp"  # Oder "SPACE" (geschützt)
 
+    # --- SYSTEM-FUNKTIONEN ---
+    "&kp LC(LS(ESC))": "Task Mgr"
+
 draw_config:
   dark_mode: true
   n_columns: 1
