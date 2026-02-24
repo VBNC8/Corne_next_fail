@@ -88,6 +88,9 @@ parse_config:
     "&hrm_safe LALT X": {t: "X", s: "Alt"}
     "&hrm_safe RALT DOT": {t: ".", s: "AltGr"}
 
+    # --- SPEZIALZEICHEN ---
+    "&nbsp": "&nbsp"  # Oder "SPACE" (geschützt)
+
 draw_config:
   dark_mode: true
   n_columns: 1
