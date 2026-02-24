@@ -82,36 +82,5 @@ parse_config:
 
 draw_config:
   dark_mode: true
-  append_style: |
-    /* Die Atom-Bombe gegen das Standard-Grau: Wir selektieren über die Layer-Klasse */
-    
-    /* LOWER Keys (Rot) */
-    .layer-default g.lower_l rect, .layer-default g.lower_r rect,
-    .layer-lower g.keypos-32 rect, .layer-lower g.keypos-33 rect { 
-        fill: #ef4444 !important; 
-        stroke: #7f1d1d !important; 
-    }
-
-    /* RAISE Keys (Blau) */
-    .layer-default g.raise_l rect, .layer-default g.raise_r rect { 
-        fill: #3b82f6 !important; 
-        stroke: #1e3a8a !important; 
-    }
-
-    /* ADJUST Key (Lila) */
-    .layer-default g.adjust_style rect { 
-        fill: #a855f7 !important; 
-        stroke: #581c87 !important; 
-    }
-
-    /* Text-Korrektur: Damit man auf den bunten Tasten auch was sieht */
-    g.lower_l text, g.lower_r text, 
-    g.raise_l text, g.raise_r text, 
-    g.adjust_style text { 
-        fill: #ffffff !important; 
-        font-weight: bold !important; 
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    }
-
-    /* Hintergrund des ganzen SVGs etwas dunkler für Kontrast */
-    svg.keymap { background-color: #111827; border-radius: 10px; }
+  style_overrides:
+    held: {fill: "#f87171", stroke: "#b91c1c"} # Das ist dein sauberes Rot
