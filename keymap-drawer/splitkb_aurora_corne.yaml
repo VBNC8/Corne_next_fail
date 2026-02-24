@@ -112,7 +112,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   adjust:
-  - {t: ᛒ BT, s: ☾ OFF}
+  - {t: ᛒ BT, s: ☀ OFF}
   - ²
   - ³
   - {t: ▽, type: trans}
@@ -121,7 +121,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ✕, s: Alt+F4}
+  - {t: ✕, s: Alt F4}
   - ᛒ ➀
   - ᛒ ➁
   - ᛒ ➂
