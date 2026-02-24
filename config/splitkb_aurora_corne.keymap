@@ -72,28 +72,38 @@
                 , <&macro_release &kp LALT>;
         };
 
-        // Kleiner-Gleich (≤) via Alt + 8804 (Unicode) oder Alt + 243 (OEM)
-        // Am sichersten unter Windows: Alt + 243
+        // Kleiner-Gleich (≤) -> Alt + 8804 ist oft schwierig, 
+        // daher nutzen wir den sichersten Weg für Windows: 
         lte: lte {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N2 &kp KP_N4 &kp KP_N3>, <&macro_release &kp LALT>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&macro_press &kp LALT>, 
+                       <&macro_tap &kp KP_N8 &kp KP_N8 &kp KP_N0 &kp KP_N4>, 
+                       <&macro_release &kp LALT>;
         };
 
-        // Größer-Gleich (≥) via Alt + 242
+        // Größer-Gleich (≥) -> Alt + 8805
         gte: gte {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N2 &kp KP_N4 &kp KP_N2>, <&macro_release &kp LALT>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&macro_press &kp LALT>, 
+                       <&macro_tap &kp KP_N8 &kp KP_N8 &kp KP_N0 &kp KP_N5>, 
+                       <&macro_release &kp LALT>;
         };
 
-        // Ungleich (≠) via Alt + 8800 (Unicode) - Erfordert meist Registry-Eintrag EnableHexNumpad
-        // Alternative für Windows: Alt + 0185 (je nach Zeichensatz oft anders)
-        // Sicherer Weg für ≠ ohne Registry:
+        // Ungleich (≠) -> Alt + 8800
         not_eq: not_eq {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N8 &kp KP_N8 &kp KP_N0 &kp KP_N0>, <&macro_release &kp LALT>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&macro_press &kp LALT>, 
+                       <&macro_tap &kp KP_N8 &kp KP_N8 &kp KP_N0 &kp KP_N0>, 
+                       <&macro_release &kp LALT>;
         };
     };
 
