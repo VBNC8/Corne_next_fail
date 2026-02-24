@@ -34,7 +34,7 @@ layers:
   - ⏯
   - {t: ESC, s: Raise}
   - {t: ⇥, s: Lower}
-  - {t: ⏎, s: Lower}
+  - {t: ↵, s: Lower}
   - {t: ␣, s: Raise}
   - {t: ⌫, s: Adjust}
   lower:
