@@ -82,5 +82,14 @@ parse_config:
 
 draw_config:
   dark_mode: true
-  style_overrides:
-    held: {fill: "#f87171", stroke: "#b91c1c"} # Das ist dein sauberes Rot
+  append_style: |
+    /* Zwingt die Daumentasten auf Rot, egal was das Tool denkt */
+    /* Wir nehmen die Positionen 31, 32, 33, 34 (deine Daumen) */
+    .keypos-31 rect, .keypos-32 rect, .keypos-33 rect, .keypos-34 rect {
+        fill: #f87171 !important;
+        stroke: #b91c1c !important;
+    }
+    /* Text auf diesen Tasten weiß machen für bessere Lesbarkeit */
+    .keypos-31 text, .keypos-32 text, .keypos-33 text, .keypos-34 text {
+        fill: white !important;
+    }
