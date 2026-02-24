@@ -72,37 +72,36 @@
                 , <&macro_release &kp LALT>;
         };
 
-        // Kleiner-Gleich (≤) -> Alt + 8804 ist oft schwierig, 
-        // daher nutzen wir den sichersten Weg für Windows: 
+        // Kleiner-Gleich (≤) - Unicode U+2264
         lte: lte {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             bindings = <&macro_press &kp LALT>, 
-                       <&macro_tap &kp KP_N8 &kp KP_N8 &kp KP_N0 &kp KP_N4>, 
+                       <&macro_tap &kp KP_PLUS &kp N2 &kp N2 &kp N6 &kp N4>, 
                        <&macro_release &kp LALT>;
         };
 
-        // Größer-Gleich (≥) -> Alt + 8805
+        // Größer-Gleich (≥) - Unicode U+2265
         gte: gte {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             bindings = <&macro_press &kp LALT>, 
-                       <&macro_tap &kp KP_N8 &kp KP_N8 &kp KP_N0 &kp KP_N5>, 
+                       <&macro_tap &kp KP_PLUS &kp N2 &kp N2 &kp N6 &kp N5>, 
                        <&macro_release &kp LALT>;
         };
 
-        // Ungleich (≠) -> Alt + 8800
+        // Ungleich (≠) - Unicode U+2260
         not_eq: not_eq {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             bindings = <&macro_press &kp LALT>, 
-                       <&macro_tap &kp KP_N8 &kp KP_N8 &kp KP_N0 &kp KP_N0>, 
+                       <&macro_tap &kp KP_PLUS &kp N2 &kp N2 &kp N6 &kp N0>, 
                        <&macro_release &kp LALT>;
         };
     };
