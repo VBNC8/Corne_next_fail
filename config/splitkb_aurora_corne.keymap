@@ -50,16 +50,10 @@
         durchmesser: durchmesser {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N6>, <&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N8>, <&macro_release &kp LALT>;
         };
 
-        plusminus: plusminus {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N7 &kp KP_N7>, <&macro_release &kp LALT>;
-        };
-
-        smiley: smiley {
+         smiley: smiley {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
@@ -135,7 +129,7 @@
 
         raise_layer {
             bindings = <
-&kp RA(Q)    &kp RA(M)   &kp RA(E)  &plusminus        &trans               &trans     &kp LBKT      &kp RA(MINUS)  &kp SEMI  &kp RPAR
+&kp RA(Q)    &kp RA(M)   &kp RA(E)  &trans            &trans               &trans     &kp LBKT      &kp RA(MINUS)  &kp SEMI  &kp RPAR
 &kp SQT      &kp MINUS   &mkp RCLK  &mkp LCLK         &durchmesser         &kp UP     &kp LEFT      &kp DOWN       &kp RIGHT &kp RBKT
 &kp RA(SQT)  &trans      &trans     &trans            &trans               &trans     &kp PLUS      &trans         &trans    &kp RA(RBKT)
                          &smiley    &kp LC(LS(ESC))   &trans               &trans     &nbsp         &trans
