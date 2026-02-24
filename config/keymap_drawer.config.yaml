@@ -50,11 +50,6 @@ parse_config:
     "&kp SLASH": {t: "-", s: "_"}
     "&kp RPAR": "="
     "&kp RBKT": {t: "+", s: "*"}
-
-     # --- MATHEMATISCHE ZEICHEN ---
-    "&kp RA(COMMA)": "≤"
-    "&kp RA(DOT)": "≥"
-    "&kp RA(SLASH)": "≠"
     
     # --- MULTIMEDIA & MAUS ---
     "&kp C_PREV": "⏮"
