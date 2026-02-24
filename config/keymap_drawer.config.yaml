@@ -1,6 +1,6 @@
 parse_config:
   raw_binding_map:
-    # --- LAYER KEYS MIT HIGHLIGHT (HELD) ---
+    # --- LAYER KEYS (Damit sie rot werden) ---
     "&lt 1 TAB": {t: "⇥", s: "Lower", type: "held"}
     "&lt 1 RET": {t: "↵", s: "Lower", type: "held"}
     "&lt 2 ESC": {t: "ESC", s: "Raise", type: "held"}
@@ -9,116 +9,17 @@ parse_config:
     "&mo 1": {t: "Lower", type: "held"}
     "&mo 2": {t: "Raise", type: "held"}
     "&mo 3": {t: "Adjust", type: "held"}
-    
-    "Lower": {t: "Lower", type: "held"}
-    "Raise": {t: "Raise", type: "held"}
-    "Adjust": {t: "Adjust", type: "held"}
-    "⤒ Pos1": {t: "⤒ Pos1", type: "held"}
-    
-    # --- WICHTIG: Prüfe ob diese exakt so in deiner .keymap stehen ---
-    "&lt 1 TAB": {t: "⇥", s: "Lower"}
-    "&lt 1 RET": {t: "↵", s: "Lower"}
-    "&lt 2 ESC": {t: "ESC", s: "Raise"}
-    "&lt_hp 2 SPACE": {t: "␣", s: "Raise"}
-    "&lt_hp 3 BSPC": {t: "⌫", s: "Adjust"}
 
-    # --- EINGABE & NAVIGATION ---
-    "&kp RET": "⏎"
-    "&kp BSPC": "⌫"
-    "&kp DEL": "⌦"
-    "&kp TAB": "⇥"
-    "&kp ESC": "⎋"
-    "&kp SPACE": "␣"
+    # --- DEUTSCHE TASTEN & SYMBOLE ---
     "&kp LGUI": "$$mdi:microsoft-windows-classic$$"
-    "&kp GRAVE": {t: "^", s: "°"}
-    "&kp PLUS": "`"
+    "&kp LC(LS(ESC))": "Task Mgr"
+    "&nbsp": "NBSP"
     "&kp HOME": "⤒ Pos1"
     "&kp END": "⤓ End"
-
-    # --- ZAHLEN & DEUTSCHE FIXES ---
-    "&kp N1": {t: "1", s: "!"}
-    "&kp N2": {t: "2", s: "\""}
-    "&kp N3": {t: "3", s: "§"}
-    "&kp N4": {t: "4", s: "$"}
-    "&kp N5": {t: "5", s: "%"}
-    "&kp N6": {t: "6", s: "&"}
-    "&kp N7": {t: "7", s: "/"}
-    "&kp N8": {t: "8", s: "("}
-    "&kp N9": {t: "9", s: ")"}
-    "&kp N0": {t: "0", s: "="}
-    "&kp MINUS": {t: "ß", s: "?"}
-    "&kp SEMI": "Ö"
-    "&kp SQT": "Ä"
-    "&kp LBKT": "Ü"
-    "&kp RA(N7)": "{"
-    "&kp RA(N8)": "["
-    "&kp RA(N9)": "]"
-    "&kp RA(N0)": "}"
-    "&kp RA(Q)": "@"
-    "&kp RA(E)": "€"
-    "&kp RA(MINUS)": "\\"
-    "&kp RA(SQT)": "´"
-    "&kp RA(NON_US_BSLH)": "|"
-    "&kp RA(RBKT)": "~"
-    "&kp NON_US_HASH": {t: "#", s: "'"}
-    "&kp NON_US_BSLH": {t: "<", s: ">"}
-    "&kp SLASH": {t: "-", s: "_"}
-    "&kp RPAR": "="
-    "&kp RBKT": {t: "+", s: "*"}
-    
-    # --- MULTIMEDIA & MAUS ---
-    "&kp C_PREV": "⏮"
-    "&kp C_NEXT": "⏭"
-    "&kp C_PP": "⏯"
-    "&mkp LCLK": "🖱 LMB"
-    "&mkp RCLK": "🖱 RMB"
-
-    # --- SYSTEM & BT ---
-    "&usb_on": {t: "ψ USB", s: "☀ ON"}  
-    "&bt_off": {t: "$$mdi:bluetooth$$", s: "☀ OFF"}
-    "&bt BT_SEL 0": {t: "$$mdi:bluetooth$$", s: "⓵"}
-    "&bt BT_SEL 1": {t: "$$mdi:bluetooth$$", s: "⓶"}
-    "&bt BT_SEL 2": {t: "$$mdi:bluetooth$$", s: "⓷"}
-    "&bt BT_SEL 3": {t: "$$mdi:bluetooth$$", s: "⓸"}
-    "&bt BT_SEL 4": {t: "$$mdi:bluetooth$$", s: "⓹"}
-    "&kp LA(F4)": {t: "✕", s: "Alt F4"}
-
-    # --- MAKROS & SPEZIAL ---
-    "&smiley": "☻"
-    "&durchmesser": "Ø"
-    "&kp RA(M)": "µ"
-    "&kp RA(N2)": "  ²"
-    "&kp RA(N3)": "  ³"
-
-    # --- MODIFIER FIXES ---
-    "&hrm_safe LCTRL D": {t: "D", s: "CTRL"}
-    "&hrm_shift LSHIFT F": {t: "F", s: "Shift"}
-    "&hrm_shift RSHIFT J": {t: "J", s: "Shift"}
-    "&hrm_safe RCTRL K": {t: "K", s: "CTRL"}
-    "&hrm_safe LALT X": {t: "X", s: "Alt"}
-    "&hrm_safe RALT DOT": {t: ".", s: "AltGr"}
-
-    # --- SPEZIALZEICHEN ---
-    "&nbsp": "&nbsp"  # Oder "SPACE" (geschützt)
-
-    # --- SYSTEM-FUNKTIONEN ---
-    "&kp LC(LS(ESC))": "Task Mgr"
 
 draw_config:
   dark_mode: true
   n_columns: 1
-  split_gap: 30.0
-  draw_key_caps: true
-  append_minus_to_shifted_label: false
-  key_w: 60.0
-  key_h: 56.0
-  svg_style: |
-    /* Das hier färbt die gehaltenen Tasten (Layer-Modifier) rot */
-    rect.held, rect.ghost {
-        fill: #ff4500 !important; /* Ein kräftiges Orangerot */
-        fill-opacity: 0.8 !important;
-    }
-    /* Das färbt den Text auf diesen Tasten weiß für besseren Kontrast */
-    .held text, .ghost text {
-        fill: white !important;
-    }
+  # Falls das Layout immer noch verschoben ist, lösche key_w und key_h!
+  # Er nutzt dann die Standardwerte deiner Aurora Corne.
+  
