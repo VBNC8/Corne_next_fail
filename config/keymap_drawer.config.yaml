@@ -66,3 +66,15 @@ draw_config:
   key_h: 56
   split_gap: 30
   draw_key_caps: true
+  # Dies färbt die Layer-Überschriften rot
+  svg_style: |
+    text.label { fill: #f87171 !important; font-weight: bold; stroke: none !important; }
+
+# Dieser Block steuert, welche Taste auf welchem Layer rot leuchtet
+layers:
+  lower:
+    highlight_keys: [32, 33]  # Die großen vertikalen Daumentasten (Tab/Ret)
+  raise:
+    highlight_keys: [31, 34]  # Die Tasten daneben (Esc/Space)
+  adjust:
+    highlight_keys: [35]      # Die Backspace-Taste ganz rechts
