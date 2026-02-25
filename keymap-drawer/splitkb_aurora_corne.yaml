@@ -32,11 +32,11 @@ layers:
   - {t: ., h: RALT}
   - ⌦
   - PP
-  - {t: ESC, s: Raise}
-  - {t: ⇥, s: Lower}
-  - {t: ↵, s: Lower}
-  - {t: ␣, s: Raise}
-  - {t: ⌫, s: Adjust}
+  - {t: ESC, s: Raise, type: held}
+  - {t: ⇥, s: Lower, type: held}
+  - {t: ↵, s: Lower, type: held}
+  - {t: ␣, s: Raise, type: held}
+  - {t: ⌫, s: Adjust, type: held}
   lower:
   - {t: ^, s: °}
   - F2
