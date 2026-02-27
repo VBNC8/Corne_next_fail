@@ -1,11 +1,11 @@
 parse_config:
   raw_binding_map:
     # --- LAYER KEYS (ROT) ---
-    "&lt 1 TAB": {t: "⇥", s: "Lower", type: "held"}
-    "&lt 1 RET": {t: "↵", s: "Lower", type: "held"}
-    "&lt 2 ESC": {t: "ESC", s: "Raise", type: "held"}
-    "&lt_hp 2 SPACE": {t: "␣", s: "Raise", type: "held"}
-    "&lt_hp 3 BSPC": {t: "⌫", s: "Adjust", type: "held"}
+    "&lt 1 TAB": {t: "⇥", h: "Lower", type: "held"}
+    "&lt 1 RET": {t: "↵", h: "Lower", type: "held"}
+    "&lt 2 ESC": {t: "ESC", h: "Raise", type: "held"}
+    "&lt_hp 2 SPACE": {t: "␣", h: "Raise", type: "held"}
+    "&lt_hp 3 BSPC": {t: "⌫", h: "Adjust", type: "held"}
     "&mo 1": {t: "Lower", type: "held"}
     "&mo 2": {t: "Raise", type: "held"}
     "&mo 3": {t: "Adjust", type: "held"}
@@ -89,12 +89,12 @@ parse_config:
     "&kp RA(N3)": "³"
 
     # --- MODIFIER FIXES ---
-    "&hrm_safe LCTRL D": {t: "D", s: "CTRL"}
-    "&hrm_shift LSHIFT F": {t: "F", s: "Shift"}
-    "&hrm_shift RSHIFT J": {t: "J", s: "Shift"}
-    "&hrm_safe RCTRL K": {t: "K", s: "CTRL"}
-    "&hrm_safe LALT X": {t: "X", s: "Alt"}
-    "&hrm_safe RALT DOT": {t: ".", s: "AltGr"}
+    "&hrm_safe LCTRL D": {t: "D", h: "CTRL"}
+    "&hrm_shift LSHIFT F": {t: "F", h: "Shift"}
+    "&hrm_shift RSHIFT J": {t: "J", h: "Shift"}
+    "&hrm_safe RCTRL K": {t: "K", h: "CTRL"}
+    "&hrm_safe LALT X": {t: "X", h: "Alt"}
+    "&hrm_safe RALT DOT": {t: ".", h: "AltGr"}
     
 draw_config:
   dark_mode: true
