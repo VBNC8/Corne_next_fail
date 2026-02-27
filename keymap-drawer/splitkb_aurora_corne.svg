@@ -8,7 +8,7 @@
 </svg>
 </defs>/* end glyphs */
 <style>/* Vergrößert alle Labels auf den Tasten */
-.label { font-size: 18px; font-weight: bold; }
+.label { font-size: 14px; font-weight: bold; }
 /* Speziell für die Sub-Labels (unten), wo deine Gerätenamen stehen */
 .sub { font-size: 16px; fill: #66b2ff; } 
 /* Vergrößert die MDI-Icons, falls möglich */
