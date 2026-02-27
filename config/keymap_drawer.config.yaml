@@ -98,13 +98,6 @@ parse_config:
     "&hrm_safe RALT DOT": {t: ".", s: "AltGr"}
     
 draw_config:
-  svg_style: |
-    /* Vergrößert alle Labels auf den Tasten */
-    .label { font-size: 14px; font-weight: bold; }
-    /* Speziell für die Sub-Labels (unten), wo deine Gerätenamen stehen */
-    .sub { font-size: 16px; fill: #66b2ff; } 
-    /* Vergrößert die MDI-Icons, falls möglich */
-    svg.icon { width: 25px; height: 25px; }
   dark_mode: true
   n_columns: 1
   key_w: 60
