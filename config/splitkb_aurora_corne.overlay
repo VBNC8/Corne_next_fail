@@ -24,9 +24,9 @@
 // 3. Konfiguration des Encoders (Kailh 10)
 &right_encoder {
     status = "okay";
-    // Pin 18 = GPIO 0.29 (A)
-    // Pin 17 = GPIO 0.02 (B) - Korrektur: Pin 17 ist P0.02 laut Aurora v1.1
-    a-gpios = <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    // Pin 18 (ENC1_A) = P1.15
+    // Pin 17 (ENC1_B) = P0.02
+    a-gpios = <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     b-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     steps = <24>; 
 };
