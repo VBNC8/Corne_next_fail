@@ -20,12 +20,13 @@
         compatible = "zmk,kscan-composite";
         label = "KSCAN_COMPOSITE";
         #binding-cells = <0>;
-        matrix { kscan = <&kscan>; }; // Greift direkt auf das Shield-Kscan zu
+        matrix { kscan = <&kscan>; };
         direct {
             kscan = <&encoder_btn_pin>;
-            row-offset = <4>; // Schiebt den Button hinter die normale Matrix
+            column-offset = <0>; // Er ist jetzt Teil von COL0
+            row-offset = <0>;    // Er reagiert auf ROW0 (P1.13)
         };
-    };
+    }
 
     chosen {
         zmk,kscan = &kscan_composite;
