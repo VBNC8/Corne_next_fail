@@ -15,9 +15,9 @@
 
     // Wir definieren den Pin 0.22 als eigenständigen Schalter
     // Das umgeht den Kscan-Fehler komplett
-    left_encoder_button: left_encoder_button {
+    right_encoder_button: right_encoder_button {
         compatible = "zmk,kscan-gpio-direct";
-        label = "LEFT_ENCODER_BUTTON";
+        label = "RIGHT_ENCODER_BUTTON";
         input-gpios = <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 
@@ -26,9 +26,9 @@
     buttons {
         compatible = "zmk,buttons";
         encoder_press {
-            label = "ENCODER_PRESS";
+            label = "RIGHT_ENCODER_PRESS";
             bindings = <&mkp MCLK>;
-            sensor = <&left_encoder_button>;
+            sensor = <&right_encoder_button>;
         };
     };
 
