@@ -163,10 +163,12 @@
         };
     };
 
-/* Globales Sensor-Binding für das Scrollen */
+/* * Globales Sensor-Binding für das Scrollen. 
+     * Das wird aktiv, wenn im aktuellen Layer kein anderes Binding definiert ist.
+     */
     right_encoder_sensor: right_encoder_sensor {
         compatible = "zmk,sensor-binding";
         #binding-cells = <0>;
         bindings = <&inc_dec_kp SCROLL_UP SCROLL_DOWN>;
     };
-}; // Ende des Root-Knotens (/)
+}; // Hier endet der Root-Knoten (/)
