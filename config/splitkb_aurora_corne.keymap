@@ -8,23 +8,24 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-    // Definition des Hardware-Pins (P0.22 / Pin 7) als Direktschalter gegen GND
-    encoder_btn_pin: kscan_direct {
-        compatible = "zmk,kscan-gpio-direct";
-        label = "ENCODER_BUTTON";
-        input-gpios = <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    // Wir definieren den Pin P0.22 als eine "Ein-Tasten-Matrix"
+    encoder_node: kscan_encoder {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN_ENCODER";
+        diode-direction = "col2row";
+        row-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // ROW1 (Pin 10)
+        col-gpios = <&gpio0 22 GPIO_ACTIVE_LOW>;                 // COL0 (Pin 7)
     };
 
-    // Wir "kleben" den Button als 37. Taste an die Matrix
     kscan_composite: kscan_composite {
         compatible = "zmk,kscan-composite";
         label = "KSCAN_COMPOSITE";
         #binding-cells = <0>;
-        matrix { kscan = <&kscan>; };
+        matrix { kscan = <&kscan>; }; // Deine normale Matrix
         direct {
-            kscan = <&encoder_btn_pin>;
+            kscan = <&encoder_node>;
             column-offset = <0>;
-            row-offset = <6>; // Weit weg von der normalen Matrix (Reihe 6)
+            row-offset = <4>; // Wir legen ihn virtuell in Reihe 4
         };
     };
 
