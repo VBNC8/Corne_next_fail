@@ -26,7 +26,7 @@
             // Wir setzen den Offset EXAKT hinter die 36 Tasten deiner Matrix
             column-offset = <36>; 
         };
-    }
+    };
 
     chosen {
         zmk,kscan = &kscan_composite;
