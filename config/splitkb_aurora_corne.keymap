@@ -70,6 +70,7 @@
 &kp A  &kp S              &hrm_safe LCTRL D  &hrm_shift LSHIFT F  &kp G                  &kp H      &hrm_shift RSHIFT J  &hrm_safe RCTRL K  &kp L                &kp SLASH
 &kp Z  &hrm_safe LALT X   &kp C              &kp V                &kp B                  &kp N      &kp M                &kp COMMA          &hrm_safe RALT DOT   &kp DEL
                           &kp C_PP           &lt 2 ESC            &lt 1 TAB              &lt 1 RET  &lt_hp 2 SPACE       &lt_hp 3 BSPC
+&kp F10
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -80,6 +81,7 @@
 &kp N1            &kp N2     &kp N3               &kp N4        &kp N5                  &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
 &kp NON_US_BSLH  &trans     &kp RA(NON_US_BSLH)  &trans        &kp NON_US_HASH        &kp RA(N7)  &kp RA(N8)  &kp RA(N9)  &kp RA(N0)  &trans
                             &trans               &kp LGUI      &kp HOME                &kp END     &trans      &nbsp
+&kp F10
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>, <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -90,6 +92,7 @@
 &kp SQT      &kp MINUS   &mkp RCLK  &mkp LCLK         &durchmesser         &kp UP     &kp LEFT      &kp DOWN       &kp RIGHT &kp RBKT
 &kp RA(SQT)  &trans      &trans     &trans            &trans               &trans     &kp PLUS      &trans         &trans    &kp RA(RBKT)
                          &smiley    &kp LC(LS(ESC))   &trans               &trans     &nbsp         &trans
+&kp F10
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>, <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -100,6 +103,7 @@
 &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans      &trans      &trans
 &usb_on       &ext_power EP_TOG  &ext_power EP_ON  &trans        &trans          &trans  &trans  &kp C_PREV  &kp C_NEXT  &trans
                                  &kp F10           &trans        &trans          &trans  &trans  &trans      
+&kp F10
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -110,6 +114,7 @@
 &trans           &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD    &trans     &trans  &trans  &trans  &trans
 &trans           &trans           &trans           &trans           &trans             &trans     &trans  &trans  &trans  &trans
                                   &bt BT_CLR       &trans           &trans             &trans     &trans  &trans  
+&kp F10
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&inc_dec_kp PG_UP PG_DN>; 
         };
