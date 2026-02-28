@@ -1,1 +1,32 @@
+#include <dt-bindings/zmk/mouse.h>
 
+/ {
+    // 1. Definition des Mausrad-Buttons als Direct-Key gegen GND
+    buttons {
+        compatible = "gpio-keys";
+        mmb_button: mmb_button {
+            // Pin 7 am Pro Micro Footprint = GPIO 0.22
+            gpios = <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+            label = "Middle Mouse Button";
+        };
+    };
+
+    // 2. Den Button für ZMK als Tastatur-Key verfügbar machen
+    mmb_key: mmb_key {
+        compatible = "zmk,kscan-composite";
+        label = "MMB_KEY";
+        // Hier wird der Button virtuell in die Matrix "eingeschleust"
+        // oder direkt als Tastencode definiert. 
+        // Einfacher: Wir nutzen den Button direkt in der Keymap (siehe unten).
+    };
+};
+
+// 3. Konfiguration des Encoders (Kailh 10)
+&right_encoder {
+    status = "okay";
+    // Pin 18 = GPIO 0.29 (A)
+    // Pin 17 = GPIO 0.02 (B) - Korrektur: Pin 17 ist P0.02 laut Aurora v1.1
+    a-gpios = <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    b-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    steps = <24>; 
+};
