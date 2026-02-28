@@ -109,15 +109,6 @@
         };
     };
 
-    buttons {
-        compatible = "gpio-keys";
-        mmb: mmb {
-            gpios = <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-            label = "Middle Mouse Button";
-            linux,code = <BTN_MIDDLE>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
