@@ -163,16 +163,11 @@
         };
     };
 
-&right_encoder {
-    status = "okay";
-};
-
-/ {
-    keymap {
-        // ... deine Layer Definitionen ...
+/* Globales Sensor-Binding (falls im Layer nichts anderes steht) */
+    /* Du kannst hier auch Maus-Scrollen eintragen */
+    right_encoder_sensor: right_encoder_sensor {
+        compatible = "zmk,sensor-binding";
+        #binding-cells = <0>;
+        bindings = <&inc_dec_kp SCROLL_UP SCROLL_DOWN>;
     };
-
-    // Das hier aktiviert das Scrollen für den Encoder
-    sensor-bindings = <&inc_dec_kp SCROLL_UP SCROLL_DOWN>;
-};
-};
+}; // Hier endet das Root-Level der Datei
