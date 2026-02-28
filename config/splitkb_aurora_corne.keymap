@@ -8,34 +8,36 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-    // 1. Definition des physischen Pins
-    kscan_button: kscan_button {
-        compatible = "zmk,kscan-gpio-direct";
-        label = "KSCAN_BUTTON";
-        input-gpios = <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    };
-
-    // 2. Zusammenführung: Matrix (36 Tasten) + Button (1 Taste)
-    kscan_composite: kscan_composite {
-        compatible = "zmk,kscan-composite";
-        label = "KSCAN_COMPOSITE";
-        #binding-cells = <0>;
-        matrix { kscan = <&kscan>; };
-        direct {
-            kscan = <&kscan_button>;
-            column-offset = <6>; // Wir schieben ihn in eine fiktive 7. Spalte
-            row-offset = <0>;
-        };
-    };
-
     chosen {
         zmk,kscan = &kscan_composite;
         zmk,underglow = &led_strip;
-        // Der Transform sorgt dafür, dass die 36 Matrix-Pins richtig sortiert werden
         zmk,matrix_transform = &five_column_transform;
     };
 
-    // --- Deine Macros & Behaviors (unverändert) ---
+    // Definition des physischen Pins P0.22
+    extra_keys: extra_keys {
+        compatible = "zmk,kscan-gpio-direct";
+        label = "EXTRA_KEYS";
+        input-gpios = <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; 
+    };
+
+    // Kombiniert die Standard-Matrix mit dem neuen Pin
+    kscan_composite: kscan_composite {
+        compatible = "zmk,kscan-composite";
+        label = "KSCAN_COMPOSITE";
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        main_scan: kscan_0 {
+            kscan = <&kscan0>; 
+        };
+
+        extra_scan: kscan_1 {
+            kscan = <&extra_keys>;
+            row-offset = <5>; // Schiebt die Taste ans Ende der Map
+        };
+    };
+
     macros {
         usb_on: usb_on { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&out OUT_USB>, <&rgb_ug RGB_ON>; };
         bt_off: bt_off { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&out OUT_BLE>, <&rgb_ug RGB_OFF>; };
@@ -59,7 +61,7 @@
 &kp A  &kp S              &hrm_safe LCTRL D  &hrm_shift LSHIFT F  &kp G                  &kp H      &hrm_shift RSHIFT J  &hrm_safe RCTRL K  &kp L                &kp SLASH
 &kp Z  &hrm_safe LALT X   &kp C              &kp V                &kp B                  &kp N      &kp M                &kp COMMA          &hrm_safe RALT DOT   &kp DEL
                           &kp C_PP           &lt 2 ESC            &lt 1 TAB              &lt 1 RET  &lt_hp 2 SPACE       &lt_hp 3 BSPC
-&kp N5
+&kp T // <--- DEIN NEUER TASTER (P0.22 auf der rechten Seite)
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -67,10 +69,10 @@
         lower_layer {
             bindings = <
 &kp GRAVE        &kp F2     &trans               &kp F4        &kp F5                  &trans      &trans      &trans      &trans      &trans
-&kp N1            &kp N2     &kp N3               &kp N4        &kp N5                  &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
-&kp NON_US_BSLH  &trans     &kp RA(NON_US_BSLH)  &trans        &kp NON_US_HASH        &kp RA(N7)  &kp RA(N8)  &kp RA(N9)  &kp RA(N0)  &trans
+&kp N1           &kp N2     &kp N3               &kp N4        &kp N5                  &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
+&kp NON_US_BSLH  &trans     &kp RA(NON_US_BSLH)  &trans        &kp NON_US_HASH         &kp RA(N7)  &kp RA(N8)  &kp RA(N9)  &kp RA(N0)  &trans
                             &trans               &kp LGUI      &kp HOME                &kp END     &trans      &nbsp
-&kp N5
+&trans 
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>, <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -80,8 +82,8 @@
 &kp RA(Q)    &kp RA(M)   &kp RA(E)  &trans            &trans               &trans     &kp LBKT      &kp RA(MINUS)  &kp SEMI  &kp RPAR
 &kp SQT      &kp MINUS   &mkp RCLK  &mkp LCLK         &durchmesser         &kp UP     &kp LEFT      &kp DOWN       &kp RIGHT &kp RBKT
 &kp RA(SQT)  &trans      &trans     &trans            &trans               &trans     &kp PLUS      &trans         &trans    &kp RA(RBKT)
-                         &smiley    &kp LC(LS(ESC))   &trans               &trans     &nbsp         &trans
-&kp F10
+                         &smiley    &kp LC(LS(ESC))   &trans               &trans     &nbsp          &trans
+&trans
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>, <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -92,7 +94,7 @@
 &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans      &trans      &trans
 &usb_on       &ext_power EP_TOG  &ext_power EP_ON  &trans        &trans          &trans  &trans  &kp C_PREV  &kp C_NEXT  &trans
                                  &kp F10           &trans        &trans          &trans  &trans  &trans      
-&kp N5
+&trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -103,7 +105,7 @@
 &trans           &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD    &trans     &trans  &trans  &trans  &trans
 &trans           &trans           &trans           &trans           &trans             &trans     &trans  &trans  &trans  &trans
                                   &bt BT_CLR       &trans           &trans             &trans     &trans  &trans  
-&kp N5
+&trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&inc_dec_kp PG_UP PG_DN>; 
         };
