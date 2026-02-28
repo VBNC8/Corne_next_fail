@@ -8,42 +8,37 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-    encoder_button: encoder_button {
+    // Wir definieren den Pin als eigenständigen KSCAN
+    kscan_button: kscan_button {
         compatible = "zmk,kscan-gpio-direct";
-        label = "Encoder Button";
+        label = "KSCAN_BUTTON";
         input-gpios = <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 
-    // Wir nutzen den "zmk,key-node", um den Pin direkt an eine Taste zu binden
-    // ohne die Matrix-Logik zu berühren.
-    zmk_buttons {
-        compatible = "zmk,behaviors";
-        encoder_btn: encoder_btn {
-            compatible = "zmk,behavior-sensor-rotate"; // Workaround-Container
-            #sensor-binding-cells = <0>;
-            bindings = <&kp F12>, <&kp F12>; 
-        };
-    };
-
-    // Da der gpio-keys Ansatz im Devicetree manchmal zickig ist, 
-    // gehen wir zurück zum sichersten Weg: Wir fügen den Pin 22 
-    // als Ein-Finger-Matrix hinzu, aber OHNE Versatz-Chaos.
-    
+    // Hier liegt der Zauber: Wir erstellen eine ZWEITE Keymap nur für diesen Button
+    // Diese wird mit der Haupt-Keymap kombiniert, ohne Indizes zu verschieben.
     kscan_composite: kscan_composite {
         compatible = "zmk,kscan-composite";
         label = "KSCAN_COMPOSITE";
         #binding-cells = <0>;
+        
+        // Teil 1: Die normale Matrix (30 Tasten)
         matrix { kscan = <&kscan>; };
+        
+        // Teil 2: Der Button (Taste Nr. 31)
+        // Wir nutzen einen Offset, der garantiert außerhalb des Transforms liegt
         direct {
-            kscan = <&encoder_button>;
-            column-offset = <30>; // Wir springen direkt hinter die 30 Tasten des Transforms
-            row-offset = <0>;
+            kscan = <&kscan_button>;
+            row-offset = <5>; 
+            column-offset = <0>;
         };
     };
 
     chosen {
         zmk,kscan = &kscan_composite;
         zmk,underglow = &led_strip;
+        // WICHTIG: Der Transform darf NUR auf die Matrix angewendet werden, 
+        // nicht auf den Composite. Das ist oft die Fehlerquelle.
         zmk,matrix_transform = &five_column_transform;
     };
 
