@@ -8,23 +8,24 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-    // Definition des Hardware-Pins (P0.22 / Pin 7)
+    // 1. Wir definieren den Pin P0.22 als direkten Schalter gegen GND
+    // Das ist am einfachsten zu löten und zu testen!
     encoder_btn_pin: kscan_direct {
         compatible = "zmk,kscan-gpio-direct";
         label = "ENCODER_BUTTON";
         input-gpios = <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 
+    // 2. Wir nutzen den 'kscan-select-handler'. 
+    // Dieser "leitet" den Tastendruck an die Matrix vorbei direkt in die Keymap.
     kscan_composite: kscan_composite {
         compatible = "zmk,kscan-composite";
         label = "KSCAN_COMPOSITE";
         #binding-cells = <0>;
-        matrix { kscan = <&kscan>; };
+        matrix { kscan = <&kscan>; }; // Die normale 5-Spalten Matrix
         direct {
             kscan = <&encoder_btn_pin>;
-            // Wir mappen den Button logisch weit weg von der Standard-Matrix
-            column-offset = <0>; 
-            row-offset = <4>; 
+            row-offset = <4>; // Wir legen ihn logisch in eine "5. Reihe"
         };
     };
 
