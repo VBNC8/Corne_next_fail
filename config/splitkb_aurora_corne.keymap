@@ -8,29 +8,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-    // Wir definieren den Pin P0.22 als eine "Ein-Tasten-Matrix"
-    encoder_node: kscan_encoder {
-        compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN_ENCODER";
-        diode-direction = "col2row";
-        row-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // ROW1 (Pin 10)
-        col-gpios = <&gpio0 22 GPIO_ACTIVE_LOW>;                 // COL0 (Pin 7)
-    };
-
-    kscan_composite: kscan_composite {
-        compatible = "zmk,kscan-composite";
-        label = "KSCAN_COMPOSITE";
-        #binding-cells = <0>;
-        matrix { kscan = <&kscan>; }; // Deine normale Matrix
-        direct {
-            kscan = <&encoder_node>;
-            column-offset = <0>;
-            row-offset = <4>; // Wir legen ihn virtuell in Reihe 4
-        };
-    };
-
     chosen {
-        zmk,kscan = &kscan_composite;
         zmk,underglow = &led_strip;
         zmk,matrix_transform = &five_column_transform;
     };
