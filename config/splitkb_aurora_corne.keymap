@@ -60,6 +60,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>; // Muss 0 sein laut Fehlermeldung
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>; // Richtungen direkt hier festlegen
+            tap-ms = <20>;
         };
     };
 
@@ -73,7 +74,7 @@
 &none &kp Z  &hrm_safe LALT X   &kp C              &kp V                &kp B                  &kp N      &kp M                &kp COMMA          &hrm_safe RALT DOT   &kp DEL   &none 
                                 &kp C_PP           &lt 2 ESC            &lt 1 TAB              &lt 1 RET  &lt_hp 2 SPACE       &lt_hp 3 BSPC
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&hwl_scroll>;
+            sensor-bindings = <&hwl_scroll><&inc_dec_kp C_VOL_DN C_VOL_UP>, <&hwl_scroll>;
         };
 
         lower_layer {
