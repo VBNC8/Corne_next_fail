@@ -30,9 +30,38 @@
     };
 
     behaviors {
-        hrm_safe: hrm_safe { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <280>; quick-tap-ms = <175>; flavor = "balanced"; require-prior-idle-ms = <150>; bindings = <&kp>, <&kp>; hold-trigger-on-release; };
-        hrm_shift: hrm_shift { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <200>; quick-tap-ms = <150>; flavor = "balanced"; bindings = <&kp>, <&kp>; hold-trigger-on-release; };
-        lt_hp: lt_hp { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <200>; quick-tap-ms = <200>; flavor = "hold-preferred"; bindings = <&mo>, <&kp>; };
+        hrm_safe: hrm_safe { 
+           compatible = "zmk,behavior-hold-tap"; 
+           #binding-cells = <2>; 
+           tapping-term-ms = <280>; 
+           quick-tap-ms = <175>; 
+           flavor = "balanced"; 
+           require-prior-idle-ms = <150>; 
+           bindings = <&kp>, <&kp>; 
+           hold-trigger-on-release; 
+        };
+        hrm_shift: hrm_shift { 
+           compatible = "zmk,behavior-hold-tap"; 
+           #binding-cells = <2>; 
+           tapping-term-ms = <200>; 
+           quick-tap-ms = <150>; 
+           flavor = "balanced"; 
+           bindings = <&kp>, <&kp>; hold-trigger-on-release; 
+        };
+        lt_hp: lt_hp { 
+            compatible = "zmk,behavior-hold-tap"; 
+            #binding-cells = <2>; 
+            tapping-term-ms = <200>; 
+            quick-tap-ms = <200>; 
+            flavor = "hold-preferred"; 
+            bindings = <&mo>, <&kp>; 
+        };
+        hwl: wheel_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DN>;
+            tap-ms = <20>;
+        };
     };
 
     keymap {
@@ -45,7 +74,7 @@
 &none &kp Z  &hrm_safe LALT X   &kp C              &kp V                &kp B                  &kp N      &kp M                &kp COMMA          &hrm_safe RALT DOT   &kp DEL   &none 
                                 &kp C_PP           &lt 2 ESC            &lt 1 TAB              &lt 1 RET  &lt_hp 2 SPACE       &lt_hp 3 BSPC
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&inc_dec_msc MOVE_Y(-10) MOVE_Y(10)>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&hwl>;
         };
 
         lower_layer {
