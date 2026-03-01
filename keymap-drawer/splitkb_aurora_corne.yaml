@@ -12,7 +12,7 @@ layers:
   - I
   - O
   - P
-  - '&mkp MCLK'
+  - {t: MCLK, h: Adjust}
   - ''
   - A
   - S
