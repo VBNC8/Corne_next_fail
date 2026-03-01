@@ -2,7 +2,7 @@ layout: {zmk_keyboard: splitkb_aurora_corne}
 layers:
   default:
   - ''
-  - '&msc SCRL_DOWN'
+  - Q
   - W
   - E
   - R
